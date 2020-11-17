@@ -44,10 +44,11 @@ seu@meta.data$cell_type_main <- ifelse(seu@meta.data$integrated_snn_res.0.8 %in%
 
 #### Overall classification assignment ####
 
-# Yiping code for cell type assignment (how to get to 'overallclassification')
-
-
-
+combined = seu
+userevisedtuft = TRUE
+combined = combined[,!is.na(combined$celltype_bped_main)]
+source("11_Add_gene_signature_module_scores.R")
+seu = combined
 
 # Save Seurat object
 saveRDS(seu, paste0('data/lungs_all/data_', pat, '_with_covid_sigs.rds'))

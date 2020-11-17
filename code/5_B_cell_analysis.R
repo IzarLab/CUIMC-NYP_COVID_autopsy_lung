@@ -151,9 +151,9 @@ heatmap.2(as.matrix(res), trace = 'none', scale = 'none', col = rev(heat.colors(
 dev.off()
 
 
-# Extended Data Figure 3f Yiping
+# Run Code to make Extended Data Figure 3f
 
-
+source("15_IG_combination_heatmaps.R")
 
 ##### Save B cell image #####
 save.image(paste0('data/', pat, '/b_cells/image_b_cells.RData'))
