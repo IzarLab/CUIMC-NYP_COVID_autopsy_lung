@@ -64,9 +64,9 @@ dev.off()
 
 # P-values for Extended Data Figure 4d
 AT2 <- subset(patient, overallclassification == 'AT2')
-paste('P-value for primed AT2 cell signature:', wilcox.test(AT2@meta.data$primed_AT2_jca1 ~ AT2@meta.data$group)$p.val)
-paste('P-value for cycling AT2 cell signature:', wilcox.test(AT2@meta.data$cycling_AT2_jca1 ~ AT2@meta.data$group)$p.val)
-paste('P-value for DATP AT2 cell signature:', wilcox.test(AT2@meta.data$UP_in_DATPs_jca1 ~ AT2@meta.data$group)$p.val)
+paste('P-value for primed AT2 cell signature:', wilcox.test(AT2@meta.data$primed_AT21 ~ AT2@meta.data$group)$p.val)
+paste('P-value for cycling AT2 cell signature:', wilcox.test(AT2@meta.data$cycling_AT21 ~ AT2@meta.data$group)$p.val)
+paste('P-value for DATP AT2 cell signature:', wilcox.test(AT2@meta.data$UP_in_DATPs1 ~ AT2@meta.data$group)$p.val)
 
 
 #### Diffusion component analysis for COVID-19 and control samples (Extended Data Figure 4hijk) ####
