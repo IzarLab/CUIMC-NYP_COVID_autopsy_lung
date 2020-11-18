@@ -20,11 +20,11 @@ dfsummed2 = dfsummed %>% group_by(overallclassification,group) %>% summarise(mea
 
 #plot either boxplots, or grouped barplots with error bars, of cell type frequency, in covid and control
 ggboxplot(dfsummed[dfsummed$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils"),], x="overallclassification", y="freq", color="group", add="jitter") + ylim(0,0.8) + stat_compare_means(aes(group=group), label="p.signif", method="wilcox.test") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
-ggsave("cellcount_immune_two_izar_control_boxplot.png",width=8,height=7)
+ggsave(paste0(workingdirectory,"/cellcount_immune_two_izar_control_boxplot.png"),width=8,height=7)
 ggboxplot(dfsummed[!(dfsummed$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils")),], x="overallclassification", y="freq", color="group", add="jitter") + ylim(0,0.8) + stat_compare_means(aes(group=group), label="p.signif", method="wilcox.test") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
-ggsave("cellcount_nonimmune_two_izar_control_boxplot.png",width=13,height=7)
+ggsave(paste0(workingdirectory,"/cellcount_nonimmune_two_izar_control_boxplot.png"),width=13,height=7)
 ggplot(dfsummed2,aes(fill=group, y=meanfreq, x=overallclassification)) + geom_bar(position="dodge",stat="identity") + geom_errorbar(aes(ymin=meanfreq-sdfreq, ymax=meanfreq+sdfreq), width=.2, position=position_dodge(.9)) + theme(axis.text.x = element_text(angle=90, hjust=1))
-ggsave("cellcount_two_izar_control_barplot.png",width=14,height=7)
+ggsave(paste0(workingdirectory,"cellcount_two_izar_control_barplot.png"),width=14,height=7)
 
 dfsummed2$immunestatus = "Non-Immune"
 dfsummed2$immunestatus[(dfsummed2$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils","Macrophages","Monocytes"))] = "Immune"
@@ -86,5 +86,5 @@ for (z in 1:length(suffixesarr))
     size = 16,
     color = 'blue')
   p <- p %>% layout(title=paste0(titlesarr[z]," Cell Fractions"),font=t)
-  orca(p, paste0(figurenamesarr[z],".pdf"),format="pdf")
+  orca(p, paste0(workingdirectory,"/",figurenamesarr[z],".pdf"),format="pdf")
 }

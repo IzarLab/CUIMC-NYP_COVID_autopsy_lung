@@ -68,19 +68,19 @@ filldf3_4 = filldf3[filldf3$gene %in% c("IL18","IL1B"),]
 #to add asterisks next to gene-tissue combinations with p-val < .01, add this code: geom_point(data = filldf3_1, color="black", size = 2, fill=NA, shape=8, position = position_nudge(x = 0.2, y = 0.2))
 
 ggplot(filldf2_1, aes(x = tissue, y = gene, color = logfoldchange, size = pval)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + scale_colour_gradientn(colours = c("blue", "purple", "red"), breaks = c(min(filldf2_1$logfoldchange),0,max(filldf2_1$logfoldchange))) + scale_size(trans="reverse", breaks=c(.005,.025,.05,.075),labels=c("<=.005","0.25","0.5",">=.075")) + ylab("Gene") + xlab("Cell Type")
-ggsave("extra_dotplot_1.pdf",width=11,height=6)
+ggsave(paste0(workingdirectory,"/extra_dotplot_1.pdf"),width=11,height=6)
 
 ggplot(filldf2_2, aes(x = tissue, y = gene, color = logfoldchange, size = pval)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + scale_colour_gradientn(colours = c("blue", "purple", "red"), breaks = c(min(filldf2_2$logfoldchange),0,max(filldf2_2$logfoldchange))) + scale_size(trans="reverse", breaks=c(.005,.025,.05,.075),labels=c("<=.005","0.25","0.5",">=.075")) + ylab("Gene") + xlab("Cell Type")
-ggsave("Figure_3h.pdf",width=11,height=4)
+ggsave(paste0(workingdirectory,"/Figure_3h.pdf"),width=11,height=4)
 
 ggplot(filldf2_3, aes(x = tissue, y = gene, color = logfoldchange, size = pval)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + scale_colour_gradientn(colours = c("blue", "purple", "red"), breaks = c(min(filldf2_3$logfoldchange),0,max(filldf2_3$logfoldchange))) + scale_size(trans="reverse", breaks=c(.005,.025,.05,.075),labels=c("<=.005","0.25","0.5",">=.075")) + ylab("Gene") + xlab("Cell Type")
-ggsave("extra_dotplot_3.pdf",width=11,height=4)
+ggsave(paste0(workingdirectory,"/extra_dotplot_3.pdf"),width=11,height=4)
 
 ggplot(filldf2_4, aes(x = tissue, y = gene, color = logfoldchange, size = pval)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + scale_colour_gradientn(colours = c("blue", "purple", "red"), breaks = c(min(filldf2_4$logfoldchange),0,max(filldf2_4$logfoldchange))) + scale_size(trans="reverse", breaks=c(.005,.025,.05,.075),labels=c("<=.005","0.25","0.5",">=.075")) + ylab("Gene") + xlab("Cell Type")
-ggsave("extra_dotplot_4.pdf",width=11,height=4)
+ggsave(paste0(workingdirectory,"/extra_dotplot_4.pdf"),width=11,height=4)
 
 # write out csv file with log fold change and p-val for IL18 and IL1A
-write.table(filldf2_2,"IL18_IL1A_table.csv",row.names=T,col.names=T,sep=",",quote=F)
+write.table(filldf2_2,paste0(workingdirectory,"/IL18_IL1A_table.csv"),row.names=T,col.names=T,sep=",",quote=F)
 
 #perform similar analyses and create similar figures as above, for three interesting pathway signatures
 misc_sigs<-read.csv('misc_signatures.csv',na.strings = '')
@@ -137,7 +137,7 @@ filldf3$sig[filldf3$sig=="Type I interferon abbreviated"] = "Type I interferon a
 theme_set(theme_bw())
 
 ggplot(filldf2, aes(x = tissue, y = sig, color = logfoldchange, size = pval)) + geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + scale_colour_gradientn(colours = c("blue", "purple", "red"), breaks = c(min(filldf2$logfoldchange),0,max(filldf2$logfoldchange))) + scale_size(trans="reverse", breaks=c(.005,.025,.05,.075),labels=c("<=.005",".025",".05",">=.075")) + ylab("Pathway") + xlab("Cell Type")
-ggsave("Figure_3i.pdf",width=11,height=5)
+ggsave(paste0(workingdirectory,"/Figure_3i.pdf"),width=11,height=5)
 DefaultAssay(combined) = "integrated"
 
 write.table(filldf2,"misc_signatures_table.csv",row.names=T,col.names=T,sep=",",quote=F)

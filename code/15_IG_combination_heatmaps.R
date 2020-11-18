@@ -53,7 +53,7 @@ for (i in 1:length(dupcombs))
 
 #create heatmap of all light ahd heavy chain combinations, with subcells for multiple constant values appearing in one combination
 ggplot(IGtable, aes(x=heavyidxs+0.5,y=lightidxs+0.5,fill=constant,width=1,height=1))+geom_tile()+geom_rect(data=duptable, aes(xmin=heavyidxs,xmax=heavyidxs+1,ymin=lightidxs,ymax=lightidxsceil,fill=constant), colour="black", size=0.3)+scale_x_continuous("Heavy Chain",breaks=1:(length(uniqueheavy)+1),labels=append(uniqueheavy,""))+scale_y_continuous("Light Chain",breaks=1:(length(uniquelight)+1),labels=append(uniquelight,"")) + scale_fill_manual(breaks = c("IGHA1", "IGHG1", "IGHG2", "IGHG3", "IGHG4", "IGHM"),values=cbPalette[1:6]) + theme(axis.text.x = element_text(angle = 90, hjust = 1, margin = margin(r = 0)), axis.text.y = element_text(vjust = 0, margin = margin(r = 0)), panel.grid.minor = element_blank(), panel.background = element_blank(), panel.grid = element_line(size = .3, colour="black"), panel.ontop = T)
-ggsave("Figure_3f.pdf")
+ggsave(paste0(workingdirectory,"/Figure_3f.pdf"))
 
 #count number of times each IG chain combination occurs in IGtable, store in sharedIGtable, along with lightidxs and heavyidxs
 sharedIGtable = data.frame(heavy=character(),light=character(),occurrences=integer(),heavyidxs=integer(),lightidxs=integer())
@@ -90,7 +90,7 @@ for (i in 1:length(uniqueIDs))
 #print heatmap of number of times each IG chain combination occurs in IGtable
 sharedIGtable$occurrences = as.character(sharedIGtable$occurrences)
 ggplot(sharedIGtable, aes(x=heavyidxs+0.5,y=lightidxs+0.5,fill=occurrences,width=1,height=1))+geom_tile()+scale_x_continuous("Heavy Chain",breaks=1:(length(uniqueheavy)+1),labels=append(uniqueheavy,""))+scale_y_continuous("Light Chain",breaks=1:(length(uniquelight)+1),labels=append(uniquelight,"")) + scale_fill_manual(breaks = c("1","2","3","4"),values=cbPalette[1:4]) + theme(axis.text.x = element_text(angle = 90, hjust = 1, margin = margin(r = 0)), axis.text.y = element_text(vjust = 0, margin = margin(r = 0)), panel.grid.minor = element_blank(), panel.background = element_blank(), panel.grid = element_line(size = .3, colour="black"), panel.ontop = T)
-ggsave("IGheatmap_shared_across_samples.pdf")
+ggsave(paste0(workingdirectory,"/IGheatmap_shared_across_samples.pdf"))
 
 #create heatmaps of IG combinations that occur in each individual sample
 for (i in 1:length(uniqueIDs))
@@ -144,6 +144,6 @@ for (i in 1:length(uniqueIDs))
     scale_y_continuous("Light Chain",breaks=1:(length(uniquelight)+1),labels=append(uniquelight,""),limits=c(1,length(uniquelight)))+
     scale_fill_manual(breaks = c("IGHA1", "IGHG1", "IGHG2", "IGHG3", "IGHG4", "IGHM"),values=cbPalette[1:6]) +
     theme(axis.text.x = element_text(angle = 90, hjust = 1, margin = margin(r = 0)), axis.text.y = element_text(vjust = 0, margin = margin(r = 0)), panel.grid.minor = element_blank(), panel.background = element_blank(), panel.grid = element_line(size = .3, colour="black"), panel.ontop = T)# + xlim(0,100) + ylim(0,100)
-    ggsave(paste0("IGheatmap_",uniqueIDs[i],"_",suffix,".pdf"))
+    ggsave(paste0(workingdirectory,"/IGheatmap_",uniqueIDs[i],"_",suffix,".pdf"))
   }
 }

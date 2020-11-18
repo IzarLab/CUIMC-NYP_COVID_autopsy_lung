@@ -23,7 +23,7 @@ atmarkers = FindMarkers(combined,ident.1="AT1",ident.2="AT2")
 
 covid_sigs_all = c(na.omit(covid_sigs$AT1),na.omit(covid_sigs$AT2))
 topatmarkers = rownames(atmarkers)[1:30]
-write.table(topatmarkers,"Extended_Data_Table_5.csv",row.names=T,col.names=T,sep=",",quote=F)
+write.table(topatmarkers,paste0(workingdirectory,"Extended_Data_Table_5.csv"),row.names=T,col.names=T,sep=",",quote=F)
 topatmarkers = topatmarkers[!(topatmarkers %in% covid_sigs_all)]
 covid_sigs_all = c(covid_sigs_all,topatmarkers)
 
@@ -42,7 +42,7 @@ combinedsmall$AT_DATP_status[combinedsmall$ATstatus=="AT2" & combinedsmall$UP_in
 
 #print violin plots of CAV1 expression in AT1, ETV5 in AT2
 #calculate wilcoxon p-vals of differential expression between covid and control in these groups
-pdf("Figure_3de.pdf")
+pdf(paste0(workingdirectory,"/Figure_3de.pdf"))
 print(VlnPlot(combinedsmall[,combinedsmall$ATstatus=="AT1"],features="CAV1",pt.size=0.1,split.by="group",combine=F,split.plot=T,log=T))
 print(VlnPlot(combinedsmall[,combinedsmall$ATstatus=="AT2"],features="ETV5",pt.size=0.1,split.by="group",combine=F,split.plot=T,log=T))
 dev.off()
@@ -61,7 +61,7 @@ combinedsmall$RNA@scale.data = combinedsmall$RNA@scale.data[permuteval,]
 
 #score combinedsmall for cell cycle markers, assign them as cycling if G2M or S scores are above a threshold, otherwise non-cycling
 combinedsmall <- CellCycleScoring(combinedsmall, s.features = cc.genes.updated.2019$s.genes, g2m.features = cc.genes.updated.2019$g2m.genes, set.ident = F)
-pdf("AT_cellcycle_scatter.pdf")
+pdf(paste0(workingdirectory,"/AT_cellcycle_scatter.pdf"))
 print(FeatureScatter(combinedsmall,"G2M.Score","S.Score"))
 dev.off()
 combinedsmall$cycling = "Non-cycling"
@@ -78,7 +78,7 @@ cycling_mediandiff = median(combinedsmall$cycling_AT21[combinedsmall$group=="cov
 primed_pval = wilcox.test(combinedsmall$primed_AT21[combinedsmall$group=="cov"],combinedsmall$primed_AT21[combinedsmall$group=="ctr"])$p.value
 primed_mediandiff = median(combinedsmall$primed_AT21[combinedsmall$group=="cov"]) - median(combinedsmall$primed_AT21[combinedsmall$group=="ctr"])
 
-pdf("Figure_3c.pdf",width=14,height=14)
+pdf(paste0(workingdirectory,"/Figure_3c.pdf"),width=14,height=14)
 
 #make heatmap of AT1 vs. AT2 differential genes, with row and column annotations
 reorder = order(combinedsmall$ATstatus,combinedsmall$group)#,combinedsmall$UP_in_DATPs1,combinedsmall$DOWN_in_DATPs1)

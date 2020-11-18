@@ -3,7 +3,7 @@ combined = readRDS(paste0(working_directory,"/combinedwithtwoizarcontrols.rds"))
 
 #print violin plot of DCLK1 expression in Tuft vs. Non-tuft cells
 #perform wilcoxon test for DCLK1 expression in Tuft vs. Non-tuft cells
-pdf("Extended_Data_Figure_6a.pdf")
+pdf(paste0(workingdirectory,"/Extended_Data_Figure_6a.pdf"))
 combined$tuft_status = "Non-tuft"
 combined$tuft_status[combined$overallclassification=="high_tuft_markers_short"] = "Tuft"
 print(VlnPlot(combined,features="DCLK1",group.by="tuft_status",pt.size=0.1,split.by="group",combine=F,split.plot=T,log=F))
@@ -14,7 +14,7 @@ print(wilcox.test(as.numeric(combined$RNA[rownames(combined)=="DCLK1",combined$t
 combined = SetIdent(combined, cells=colnames(combined)[combined$overallclassification=="high_tuft_markers_short"],value="high_tuft_markers_short")
 #combined = AddModuleScore(object = combined, features = list(na.omit(covid_sigs$tuft_1_montoro)), name = "tuft_1_montoro", assay = 'RNA', search = T)
 #combined = AddModuleScore(object = combined, features = list(na.omit(covid_sigs$tuft_2_montoro)), name = "tuft_2_montoro", assay = 'RNA', search = T)
-pdf("Extended_Data_Figure_6bc.pdf")
+pdf(paste0(workingdirectory,"/Extended_Data_Figure_6bc.pdf"))
 plotobj = VlnPlot(combined[,combined$tuft_status=="Tuft"],features=c("tuft_1_montoro1","tuft_2_montoro1"),pt.size=0.1,combine=T,split.by = "group",split.plot=T,log=F,same.y.lims=T) + scale_y_continuous(limits = c(-0.1,0.2))
 print(plotobj)
 dev.off()
