@@ -8,38 +8,39 @@ combined$overallclassification[combined$overallclassification=="Not classified"]
 
 #merge Macrophages and Monocytes into one groups
 theme_set(theme_bw())
-dftosum = data.frame(orig.ident = combined$orig.ident, group=combined$group, overallclassification = combined$overallclassification)
-dftosum$overallclassification[dftosum$overallclassification=="Macrophages"] = "Macrophages/Monocytes"
-dftosum$overallclassification[dftosum$overallclassification=="Monocytes"] = "Macrophages/Monocytes"
+df_tobesummed = data.frame(orig.ident = combined$orig.ident, group=combined$group, overallclassification = combined$overallclassification)
+df_tobesummed$overallclassification[df_tobesummed$overallclassification=="Macrophages"] = "Macrophages/Monocytes"
+df_tobesummed$overallclassification[df_tobesummed$overallclassification=="Monocytes"] = "Macrophages/Monocytes"
 
-#calculate frequencies of each cell type in each sample, store in dfsummed
+#calculate frequencies of each cell type in each sample, store in df_summed
 #calculate mean and sd of cell type frequencies in covid and control, store in dfsummed2
-dfsummed = dftosum %>% group_by(orig.ident,overallclassification,group) %>% tally()
-dfsummed = dfsummed %>% group_by(orig.ident) %>% mutate(freq = n/sum(n))
-dfsummed2 = dfsummed %>% group_by(overallclassification,group) %>% summarise(meanfreq = mean(freq), sdfreq = sd(freq))
+df_summed = df_tobesummed %>% group_by(orig.ident,overallclassification,group) %>% tally()
+df_summed = df_summed %>% group_by(orig.ident) %>% mutate(freq = n/sum(n))
+df_summed_across_samples = df_summed %>% group_by(overallclassification,group) %>% summarise(meanfreq = mean(freq), sdfreq = sd(freq))
 
 #plot either boxplots, or grouped barplots with error bars, of cell type frequency, in covid and control
-ggboxplot(dfsummed[dfsummed$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils"),], x="overallclassification", y="freq", color="group", add="jitter") + ylim(0,0.8) + stat_compare_means(aes(group=group), label="p.signif", method="wilcox.test") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+ggboxplot(df_summed[df_summed$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils"),], x="overallclassification", y="freq", color="group", add="jitter") + ylim(0,0.8) + stat_compare_means(aes(group=group), label="p.signif", method="wilcox.test") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ggsave(paste0(workingdirectory,"/cellcount_immune_two_izar_control_boxplot.png"),width=8,height=7)
-ggboxplot(dfsummed[!(dfsummed$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils")),], x="overallclassification", y="freq", color="group", add="jitter") + ylim(0,0.8) + stat_compare_means(aes(group=group), label="p.signif", method="wilcox.test") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+ggboxplot(df_summed[!(df_summed$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils")),], x="overallclassification", y="freq", color="group", add="jitter") + ylim(0,0.8) + stat_compare_means(aes(group=group), label="p.signif", method="wilcox.test") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ggsave(paste0(workingdirectory,"/cellcount_nonimmune_two_izar_control_boxplot.png"),width=13,height=7)
-ggplot(dfsummed2,aes(fill=group, y=meanfreq, x=overallclassification)) + geom_bar(position="dodge",stat="identity") + geom_errorbar(aes(ymin=meanfreq-sdfreq, ymax=meanfreq+sdfreq), width=.2, position=position_dodge(.9)) + theme(axis.text.x = element_text(angle=90, hjust=1))
+
+ggplot(df_summed_across_samples,aes(fill=group, y=meanfreq, x=overallclassification)) + geom_bar(position="dodge",stat="identity") + geom_errorbar(aes(ymin=meanfreq-sdfreq, ymax=meanfreq+sdfreq), width=.2, position=position_dodge(.9)) + theme(axis.text.x = element_text(angle=90, hjust=1))
 ggsave(paste0(workingdirectory,"cellcount_two_izar_control_barplot.png"),width=14,height=7)
 
-dfsummed2$immunestatus = "Non-Immune"
-dfsummed2$immunestatus[(dfsummed2$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils","Macrophages","Monocytes"))] = "Immune"
+df_summed_across_samples$immunestatus = "Non-Immune"
+df_summed_across_samples$immunestatus[(dfsummed2$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils","Macrophages","Monocytes"))] = "Immune"
 library(plotly)
 library(orca)
 
 #create new dataframe dfsummed2, with overall frequency of all cell types across covid or control samples
-dfsummedoverall = data.frame(celltype=rownames(prop.table(table(combined$overallclassification[combined$group=="cov"]))),frequency=prop.table(table(combined$overallclassification[combined$group=="cov"])),group="cov")
-dfsummedoverall2 = data.frame(celltype=rownames(prop.table(table(combined$overallclassification[combined$group=="ctr"]))),frequency=prop.table(table(combined$overallclassification[combined$group=="ctr"])),group="ctr")
-dfsummedoverall3 = rbind(dfsummedoverall,dfsummedoverall2)
-dfsummedoverall3$overallclassification=dfsummedoverall3$celltype
-dfsummedoverall3$meanfreq=dfsummedoverall3$frequency.Freq
-dfsummedoverall3$immunestatus = "Non-Immune"
-dfsummedoverall3$immunestatus[(dfsummed2$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils","Macrophages","Monocytes"))] = "Immune"
-dfsummed2 = dfsummedoverall3
+df_summed_overall_cov = data.frame(celltype=rownames(prop.table(table(combined$overallclassification[combined$group=="cov"]))),frequency=prop.table(table(combined$overallclassification[combined$group=="cov"])),group="cov")
+df_summed_overall_ctr = data.frame(celltype=rownames(prop.table(table(combined$overallclassification[combined$group=="ctr"]))),frequency=prop.table(table(combined$overallclassification[combined$group=="ctr"])),group="ctr")
+df_summed_overall = rbind(df_summed_overall_cov,df_summed_overall_ctr)
+df_summed_overall$overallclassification=df_summed_overall$celltype
+df_summed_overall$meanfreq=df_summed_overall3frequency.Freq
+df_summed_overall$immunestatus = "Non-Immune"
+df_summed_overall$immunestatus[(df_summed_overall$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils","Macrophages","Monocytes"))] = "Immune"
 
 #plot pie charts of immune cell type proportions and non-immune proportions, in either covid samples, control samples, or both
 #also plot pie charts of total immune vs. non-immune proportions across covid and control samples
@@ -50,27 +51,27 @@ for (z in 1:length(suffixesarr))
 {
   if (z %in% c(1,3,5,7))
   {
-    selectarr = (dfsummed2$group=="cov")
+    selectarr = (df_summed_overall$group=="cov")
   } else {
-    selectarr = (dfsummed2$group=="ctr")
+    selectarr = (df_summed_overall$group=="ctr")
   }
   if (z %in% c(3,4))
   {
-    selectarr = (selectarr & (dfsummed2$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils","Macrophages","Monocytes")))
+    selectarr = (selectarr & (df_summed_overall$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils","Macrophages","Monocytes")))
   }
   if (z %in% c(5,6))
   {
-    selectarr = (selectarr & !(dfsummed2$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils","Macrophages","Monocytes")))
+    selectarr = (selectarr & !(df_summed_overall$overallclassification %in% c("B-cells","Plasma cells","CD4+ T-cells","CD8+ T-cells","DC","Eosinophils","Macrophages/Monocytes","NK cells","Neutrophils","Macrophages","Monocytes")))
   }
   if (z %in% c(1,2))
   {
-    p <- plot_ly(dfsummed2[selectarr,], labels = ~immunestatus, values = ~meanfreq, type = 'pie',textposition = 'outside',textinfo = 'label+percent', sort=F)# %>%
+    p <- plot_ly(df_summed_overall[selectarr,], labels = ~immunestatus, values = ~meanfreq, type = 'pie',textposition = 'outside',textinfo = 'label+percent', sort=F)# %>%
   } else {
-    p <- plot_ly(dfsummed2[selectarr,], labels = ~overallclassification, values = ~meanfreq, type = 'pie',textposition = 'outside',textinfo = 'label+percent', sort=F)# %>%
+    p <- plot_ly(df_summed_overall[selectarr,], labels = ~overallclassification, values = ~meanfreq, type = 'pie',textposition = 'outside',textinfo = 'label+percent', sort=F)# %>%
   }
   p <- p %>%  layout(title = 'Cell Frequency',
-	   xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE, type = "category", categoryorder = "array", categoryarray = unique(dfsummed2$overallclassification)),
-	   yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE, type = "category", categoryorder = "array", categoryarray = unique(dfsummed2$overallclassification)),
+	   xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE, type = "category", categoryorder = "array", categoryarray = unique(df_summed_overall$overallclassification)),
+	   yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE, type = "category", categoryorder = "array", categoryarray = unique(df_summed_overall$overallclassification)),
 	   showlegend=F)
 
   m <- list(
