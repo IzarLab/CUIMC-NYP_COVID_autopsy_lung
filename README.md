@@ -7,5 +7,5 @@ Johannes C. Melms, Jana Biermann, Huachao Huang, Yiping Wang, Amit Dipak Amin, I
 
 ### Overview of code files
 File name	| Title |	Input |	Output | Figures/tables generated
---- | --- | --- | --- | --- | ---
+--- | --- | --- | --- | ---
 1_Initial_Seurat_anlysis |	Seurat analysis for CellBender output with sample name and expected doublet rate provided in arguments |	CellBender output (filtered.h5) |	RDS file of individual Seurat object |	-
