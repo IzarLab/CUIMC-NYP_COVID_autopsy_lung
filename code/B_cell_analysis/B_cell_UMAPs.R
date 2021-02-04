@@ -25,13 +25,14 @@ ifelse(!dir.exists(file.path(paste0('data/lungs_all/b_cells'))), dir.create(file
 pdf('data/lungs_all/b_cells/umap_bcell_cov_ctr.pdf')
 
 # UMAPs
-DimPlot(patient, reduction = 'umap', label = F, group.by = 'cell_type_fine', raster = T, cols = c('#AF1900', '#E19600', '#193264'))
-DimPlot(patient, reduction = 'umap', label = F, group.by = 'cell_type_fine', raster = T, cols = c('#AF1900', '#E19600', '#193264')) + NoLegend()
-DimPlot(patient, reduction = 'umap', label = F, group.by = 'group', raster = T, cols = colors) + ggtitle('Disease status')
-DimPlot(patient, reduction = 'umap', label = F, group.by = 'group', raster = T, cols = colors) + ggtitle('Disease status') + NoLegend()
+DimPlot(patient, reduction = 'umap', label = F, group.by = 'cell_type_fine', raster = T, shuffle = T, cols = c('#AF1900', '#E19600', '#193264'))
+DimPlot(patient, reduction = 'umap', label = F, group.by = 'cell_type_fine', raster = T, shuffle = T, cols = c('#AF1900', '#E19600', '#193264')) + NoLegend()
+DimPlot(patient, reduction = 'umap', label = F, group.by = 'group', raster = T, shuffle = T, cols = colors) + ggtitle('Disease status')
+DimPlot(patient, reduction = 'umap', label = F, group.by = 'group', raster = T, shuffle = T, cols = colors) + ggtitle('Disease status') + NoLegend()
 
 # Dotplot
-DotPlot(patient, assay = 'RNA', features = c('MS4A1', 'IL2RA', 'SDC1', 'IRF4'), group.by = 'cell_type_fine', dot.scale = 10) + scale_color_viridis() + RotatedAxis() + coord_flip()
+DotPlot(patient, assay = 'RNA', features = c('MS4A1', 'IL2RA', 'SDC1', 'IRF4'), 
+        group.by = 'cell_type_fine', dot.scale = 10) + scale_color_viridis() + RotatedAxis() + coord_flip()
 
 dev.off()
 
