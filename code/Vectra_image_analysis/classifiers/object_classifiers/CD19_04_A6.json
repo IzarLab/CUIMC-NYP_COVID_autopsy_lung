@@ -1,0 +1,32 @@
+{
+  "object_classifier_type": "SimpleClassifier",
+  "function": {
+    "classifier_fun": "ClassifyByMeasurementFunction",
+    "measurement": "Cell: CD19 mean",
+    "pathClassBelow": {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    "pathClassEquals": {
+      "name": "CD19",
+      "colorRGB": -256
+    },
+    "pathClassAbove": {
+      "name": "CD19",
+      "colorRGB": -256
+    },
+    "threshold": 0.9
+  },
+  "pathClasses": [
+    {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    {
+      "name": "CD19",
+      "colorRGB": -256
+    }
+  ],
+  "filter": "DETECTIONS_ALL",
+  "timestamp": 1612228735653
+}

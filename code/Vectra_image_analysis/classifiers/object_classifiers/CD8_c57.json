@@ -1,0 +1,32 @@
+{
+  "object_classifier_type": "SimpleClassifier",
+  "function": {
+    "classifier_fun": "ClassifyByMeasurementFunction",
+    "measurement": "Nucleus: CD8 mean",
+    "pathClassBelow": {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    "pathClassEquals": {
+      "name": "CD8",
+      "colorRGB": -6992448
+    },
+    "pathClassAbove": {
+      "name": "CD8",
+      "colorRGB": -6992448
+    },
+    "threshold": 0.15
+  },
+  "pathClasses": [
+    {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    {
+      "name": "CD8",
+      "colorRGB": -6992448
+    }
+  ],
+  "filter": "DETECTIONS_ALL",
+  "timestamp": 1612313076336
+}

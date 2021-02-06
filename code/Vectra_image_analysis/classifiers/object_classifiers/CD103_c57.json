@@ -1,0 +1,32 @@
+{
+  "object_classifier_type": "SimpleClassifier",
+  "function": {
+    "classifier_fun": "ClassifyByMeasurementFunction",
+    "measurement": "Cell: CD103 mean",
+    "pathClassBelow": {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    "pathClassEquals": {
+      "name": "CD103",
+      "colorRGB": -5952982
+    },
+    "pathClassAbove": {
+      "name": "CD103",
+      "colorRGB": -5952982
+    },
+    "threshold": 0.2
+  },
+  "pathClasses": [
+    {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    {
+      "name": "CD103",
+      "colorRGB": -5952982
+    }
+  ],
+  "filter": "DETECTIONS_ALL",
+  "timestamp": 1612312903044
+}

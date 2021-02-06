@@ -1,0 +1,43 @@
+{
+  "pathClasses": [
+    {
+      "name": "Unclassified"
+    },
+    {
+      "name": "DAPI",
+      "color": -16772353
+    },
+    {
+      "name": "CD4",
+      "color": -6997741
+    },
+    {
+      "name": "CD19",
+      "color": -256
+    },
+    {
+      "name": "GZMB",
+      "color": -32768
+    },
+    {
+      "name": "CD103",
+      "color": -5952982
+    },
+    {
+      "name": "CD8",
+      "color": -6992448
+    },
+    {
+      "name": "CD163",
+      "color": -65281
+    },
+    {
+      "name": "Autofluorescence",
+      "color": -13676721
+    },
+    {
+      "name": "Ignore*",
+      "color": -4934476
+    }
+  ]
+}

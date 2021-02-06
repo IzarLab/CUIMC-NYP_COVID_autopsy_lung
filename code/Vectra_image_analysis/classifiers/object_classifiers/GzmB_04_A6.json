@@ -1,0 +1,32 @@
+{
+  "object_classifier_type": "SimpleClassifier",
+  "function": {
+    "classifier_fun": "ClassifyByMeasurementFunction",
+    "measurement": "Cell: GzmB mean",
+    "pathClassBelow": {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    "pathClassEquals": {
+      "name": "GZMB",
+      "colorRGB": -32768
+    },
+    "pathClassAbove": {
+      "name": "GZMB",
+      "colorRGB": -32768
+    },
+    "threshold": 0.6
+  },
+  "pathClasses": [
+    {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    {
+      "name": "GZMB",
+      "colorRGB": -32768
+    }
+  ],
+  "filter": "DETECTIONS_ALL",
+  "timestamp": 1612228807126
+}

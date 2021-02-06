@@ -1,0 +1,32 @@
+{
+  "object_classifier_type": "SimpleClassifier",
+  "function": {
+    "classifier_fun": "ClassifyByMeasurementFunction",
+    "measurement": "Cell: CD4 mean",
+    "pathClassBelow": {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    "pathClassEquals": {
+      "name": "CD4",
+      "colorRGB": -6997741
+    },
+    "pathClassAbove": {
+      "name": "CD4",
+      "colorRGB": -6997741
+    },
+    "threshold": 0.35
+  },
+  "pathClasses": [
+    {
+      "name": "Ignore*",
+      "colorRGB": -4934476
+    },
+    {
+      "name": "CD4",
+      "colorRGB": -6997741
+    }
+  ],
+  "filter": "DETECTIONS_ALL",
+  "timestamp": 1612228469646
+}
