@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-#### B cell analysis: UMAPs
+#### B cell analysis: UMAPs and dot plot
 library(Seurat)
 library(dplyr)
 library(ggplot2)
