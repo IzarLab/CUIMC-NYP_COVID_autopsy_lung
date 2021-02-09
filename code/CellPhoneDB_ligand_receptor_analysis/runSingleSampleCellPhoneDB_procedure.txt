@@ -1,12 +1,15 @@
-# Example Steps for a single CellphoneDB run
+# Example Steps for a single CellphoneDB run at the command terminal
+# Below code assumes CellPhoneDB is installed and available at virtual environment 'cpdb-venv'
+
 # Activate virtual-env
 source cpdb-venv/bin/activate
 
+# change to the data directory
 cd /PATH/TO/DATA/FOLDER/Covid/L03cov
 
 
 
-# cellphonedb run command
+# cellphonedb runs
 cellphonedb method statistical_analysis data_cellphoneDB_metaData_hum_L03cov.txt data_cellphoneDB_countNorm_hum_L03cov.txt --output-path=out_cellTypeMain --counts-data=gene_name --threads 4
 
 

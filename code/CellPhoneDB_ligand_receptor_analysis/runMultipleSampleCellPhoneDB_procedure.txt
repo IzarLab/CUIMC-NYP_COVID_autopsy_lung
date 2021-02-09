@@ -1,0 +1,14 @@
+# Example Steps for multiple CellphoneDB runs at the command terminal using a bash script
+# Below code assumes CellPhoneDB is installed and available at virtual environment 'cpdb-venv'
+
+# Additional information for running a bash command is available here:
+# https://stackoverflow.com/questions/733824/how-to-run-a-shell-script-on-a-unix-console-or-mac-terminal
+
+# Activate virtual-env
+source cpdb-venv/bin/activate
+
+# change to the code directory
+cd /PATH/TO/DATA/FOLDER/Covid
+
+# an example bash script for covid
+bash runMultipleSampleCellPhoneDB_bashScript.sh
