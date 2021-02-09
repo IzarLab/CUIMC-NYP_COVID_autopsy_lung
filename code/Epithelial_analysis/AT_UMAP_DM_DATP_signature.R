@@ -162,7 +162,8 @@ save.image('data/lungs_all/diffusion/AT/image_AT_cells_int.RData')
 saveRDS(patient, 'data/lungs_all/diffusion/AT/data_AT_int_cov_ctr.rds')
 
 
-### DATP signature generation Add scaled data for DEG
+### DATP signature generation 
+# Add scaled data for DEG
 DefaultAssay(patient) <- 'RNA'
 patient <- NormalizeData(patient)
 patient <- ScaleData(patient)
@@ -198,8 +199,4 @@ write.csv(prop.table(table(patient$cell_type_ourdatp, patient$group)), 'data/lun
 write.csv(prop.table(table(subset(patient, group == 'COVID-19')$cell_type_ourdatp)), 'data/lungs_all/cell_type_fraction_datp_among_AT1AT2_cov.csv', 
           row.names = F)
 write.csv(prop.table(table(subset(patient, group == 'Control')$cell_type_ourdatp)), 'data/lungs_all/cell_type_fraction_datp_among_AT1AT2_ctr.csv', 
-<<<<<<< HEAD
           row.names = F)
-=======
-          row.names = F)
->>>>>>> b69e7ecdd24bf93efb44cb14a8bcfbb20a366ba9
