@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Seurat analysis for cellbender output and doublet rate provided as an argument
+#### Author: Jana Biermann, PhD
+
 library(dplyr)
 library(Seurat)
 library(DropletUtils)

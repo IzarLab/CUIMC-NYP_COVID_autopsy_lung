@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Global analysis: Harmony UMAPs
+#### Author: Jana Biermann, PhD
+
 library(Seurat)
 library(dplyr)
 library(ggplot2)

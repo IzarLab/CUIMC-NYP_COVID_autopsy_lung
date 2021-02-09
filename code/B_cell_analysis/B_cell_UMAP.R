@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### B cell analysis: UMAPs and dot plot
+#### Author: Jana Biermann, PhD
+
 library(Seurat)
 library(dplyr)
 library(ggplot2)

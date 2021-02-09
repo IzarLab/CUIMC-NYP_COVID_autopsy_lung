@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Main cell type annotation of integrated Seurat object
+#### Author: Jana Biermann, PhD
+
 library(dplyr)
 library(Seurat)
 

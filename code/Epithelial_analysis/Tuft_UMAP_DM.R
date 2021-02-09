@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Tuft cell analysis: Reintegration; UMAPs, dot plots and diffusion maps; DGE and hypergeometric test
+#### Author: Jana Biermann, PhD
+
 library(Seurat)
 library(destiny)
 library(dplyr)

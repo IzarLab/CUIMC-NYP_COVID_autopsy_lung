@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### T cell analysis: UMAPs
+#### Authors: Johannes Melms, PhD; Jana Biermann, PhD
+
 library(ggplot2)
 library(Seurat)
 library(dplyr)

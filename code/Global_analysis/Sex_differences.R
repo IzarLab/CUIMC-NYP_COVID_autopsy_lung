@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Global analysis: Sex differences
+#### Author: Jana Biermann, PhD
+
 library(dplyr)
 library(Seurat)
 library(ggplot2)
@@ -10,10 +12,11 @@ library(viridis)
 seu <- readRDS('data/lungs_all/data_lungs_all.rds')
 
 # Save UMAPS and dot plots
-pdf(file = 'data/lungs_all/!plots_global_sexdifferences.pdf')
+pdf(file = 'data/lungs_all/plots_global_sexdifferences.pdf')
 
 # UMAP
-DimPlot(seu, reduction = 'umap', label = F, group.by = 'sex', shuffle = T, raster = T, cols = c('#AF1900', '#0072B2'))
+DimPlot(seu, reduction = 'umap', label = F, group.by = 'sex', shuffle = T, raster = T, cols = c('#009E73', '#D55E00'), pt.size = 0.001)
+DimPlot(seu, reduction = 'umap', label = F, group.by = 'sex', shuffle = T, raster = T, cols = c('#009E73', '#D55E00'), pt.size = 0.001) + NoLegend()
 
 # Dot plots
 DotPlot(seu, assay = 'RNA', features = c('SARS-COV-2', 'ACE2', 'BSG', 'NPR1', 'TMPRSS2', 'FURIN', 'CTSL'), group.by = 'cell_type_intermediate', 

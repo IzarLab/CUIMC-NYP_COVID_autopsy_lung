@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Fine cell type annotation of B cell subset
+#### Author: Jana Biermann, PhD
+
 library(dplyr)
 library(Seurat)
 

@@ -1,0 +1,18 @@
+# Example Steps for a single CellphoneDB run
+# Activate virtual-env
+source cpdb-venv/bin/activate
+
+cd /PATH/TO/DATA/FOLDER/Covid/L03cov
+
+
+
+# cellphonedb run command
+cellphonedb method statistical_analysis data_cellphoneDB_metaData_hum_L03cov.txt data_cellphoneDB_countNorm_hum_L03cov.txt --output-path=out_cellTypeMain --counts-data=gene_name --threads 4
+
+
+# dotplots of all ligand-receptor interactions
+cellphonedb plot dot_plot --means-path out_cellTypeMain/means.txt --pvalues-path out_cellTypeMain/pvalues.txt --output-path out_cellTypeMain --output-name dotplot_cellTypeMain_L03cov.pdf
+
+
+# heatmap of cell-cell interaction counts
+cellphonedb plot heatmap_plot --pvalues-path out_cellTypeMain/pvalues.txt --output-path out_cellTypeMain --count-name heatmap_cellTypeMain_L03cov.pdf data_cellphoneDB_metaData_hum_L03cov.txt

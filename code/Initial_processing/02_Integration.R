@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Seurat intergation of individual objects (RPCA)
+#### Author: Jana Biermann, PhD
+
 library(dplyr)
 library(Seurat)
 library(future)

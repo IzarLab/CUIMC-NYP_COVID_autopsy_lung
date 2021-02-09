@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Myeloid analysis: UMAPs and diffusion maps; Identification of AMs
+#### Author: Jana Biermann, PhD
+
 library(Seurat)
 library(destiny)
 library(dplyr)

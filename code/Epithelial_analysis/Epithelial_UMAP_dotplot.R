@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Epithelial cell analysis: UMAPs and dot plots
+#### Author: Jana Biermann, PhD
+
 library(dplyr)
 library(Seurat)
 library(ggplot2)

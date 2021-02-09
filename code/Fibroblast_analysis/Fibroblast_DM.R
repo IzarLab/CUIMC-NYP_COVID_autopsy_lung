@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Fibroblast analysis: Diffusion maps
+#### Author: Jana Biermann, PhD
+
 library(Seurat)
 library(destiny)
 library(dplyr)

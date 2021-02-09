@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 #### Fine cell type annotation of endothelial subset
+#### Author: Jana Biermann, PhD
+
 library(dplyr)
 library(Seurat)
 
