@@ -1,8 +1,11 @@
 #!/usr/bin/env Rscript
 
 #### Tabels for cell type fractions and SARS-CoV-2 reads
+<<<<<<< HEAD
 #### Author: Jana Biermann, PhD
 
+=======
+>>>>>>> b69e7ecdd24bf93efb44cb14a8bcfbb20a366ba9
 library(Seurat)
 library(dplyr)
 
@@ -30,4 +33,8 @@ write.csv(prop.table(table(subset(seu, group == 'Control')$cell_type_fine)), 'da
 L19 <- subset(seu, patient == 'L19cov')
 hist(L19@assays$RNA@counts['SARS-COV-2', ], breaks = 200, ylim = c(0, 10))
 dfL19 <- data.frame(SARS_COV_2 = L19@assays$RNA@counts['SARS-COV-2', ], barcode = colnames(L19@assays$RNA@counts), cell_type_fine = L19$cell_type_fine)
+<<<<<<< HEAD
 write.csv(table(dfL19$SARS_COV_2, dfL19$cell_type_fine), 'data/lungs_all/table_SARS-CoV-2_reads_in_L19cov.csv')
+=======
+write.csv(table(dfL19$SARS_COV_2, dfL19$cell_type_fine), 'data/lungs_all/table_SARS-CoV-2_reads_in_L19cov.csv')
+>>>>>>> b69e7ecdd24bf93efb44cb14a8bcfbb20a366ba9
