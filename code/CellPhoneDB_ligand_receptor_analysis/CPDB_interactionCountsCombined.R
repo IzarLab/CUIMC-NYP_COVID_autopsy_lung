@@ -70,7 +70,7 @@ head(counts_mat)
 counts_mat <- counts_mat[, c(1, 2, grep("count", colnames(counts_mat)))]
 head(counts_mat)
 # write.csv(counts_mat,file =
-# 'cellphoneDB/analysis/combinedCountsMat_Ctrl.csv')
+# 'cellphoneDB/analysis/ligandReceptors_combinedCountsMat_Ctrl.csv')
 
 # *****************************************************************************************
 # getting Covid interaction-counts
@@ -159,14 +159,14 @@ head(counts_mat)
 counts_mat <- counts_mat[, c(1, 2, grep("count", colnames(counts_mat)))]
 head(counts_mat)
 # write.csv(counts_mat,file =
-# 'cellphoneDB/analysis/combinedCountsMat_Covid.csv')
+# 'cellphoneDB/analysis/ligandReceptors_combinedCountsMat_Covid.csv')
 
 
 # *****************************************************************************************
 # find the median counts for COVID and Control samples separately
 # *****************************************************************************************
 # *CONTROL
-counts_mat_ctrl <- read.csv(file = "cellphoneDB/analysis/combinedCountsMat_Ctrl.csv", 
+counts_mat_ctrl <- read.csv(file = "cellphoneDB/analysis/ligandReceptors_combinedCountsMat_Ctrl.csv", 
                             row.names = 1)
 head(counts_mat_ctrl)
 
@@ -191,7 +191,7 @@ count_matrix_ctrl
 
 
 # COVID
-counts_mat_covid <- read.csv(file = "cellphoneDB/analysis/combinedCountsMat_covid.csv", 
+counts_mat_covid <- read.csv(file = "cellphoneDB/analysis/ligandReceptors_combinedCountsMat_Covid.csv", 
                              row.names = 1)
 head(counts_mat_covid)
 temp <- apply(counts_mat_covid[, 3:ncol(counts_mat_covid)], 
@@ -309,7 +309,7 @@ dev.off()
 # #analysis of interactions between major cell types
 # *****************************************************************************************
 # *CONTROL
-counts_mat_ctrl <- read.csv(file = "cellphoneDB/analysis/combinedCountsMat_Ctrl.csv", 
+counts_mat_ctrl <- read.csv(file = "cellphoneDB/analysis/ligandReceptors_combinedCountsMat_Ctrl.csv", 
                             row.names = 1)
 head(counts_mat_ctrl)
 dim(counts_mat_ctrl)
@@ -336,7 +336,7 @@ ggplot(temp_plot, aes(x = cell_cell, y = values)) +
 
 
 # COVID
-counts_mat_covid <- read.csv(file = "cellphoneDB/analysis/combinedCountsMat_covid.csv", 
+counts_mat_covid <- read.csv(file = "cellphoneDB/analysis/ligandReceptors_combinedCountsMat_Covid.csv", 
                              row.names = 1)
 head(counts_mat_covid)
 
