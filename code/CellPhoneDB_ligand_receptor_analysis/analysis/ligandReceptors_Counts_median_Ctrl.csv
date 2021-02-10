@@ -1,0 +1,10 @@
+"","APC-like","B cells","Endothelial cells","Epithelial cells","Fibroblasts","Mast cell-like","Myeloid","Neuron-like cells","T cells"
+"APC-like",8,7,15,18,17,4,22,14,10
+"B cells",7,3,10,12,13,4,11,6,4
+"Endothelial cells",15,10,12,27,34,8,25,18,11
+"Epithelial cells",18,12,27,28,69,9,31,21,13
+"Fibroblasts",17,13,34,69,42,12,36,35,21
+"Mast cell-like",4,4,8,9,12,2,12,8,4
+"Myeloid",22,11,25,31,36,12,26,20,20
+"Neuron-like cells",14,6,18,21,35,8,20,9,7
+"T cells",10,4,11,13,21,4,20,7,3

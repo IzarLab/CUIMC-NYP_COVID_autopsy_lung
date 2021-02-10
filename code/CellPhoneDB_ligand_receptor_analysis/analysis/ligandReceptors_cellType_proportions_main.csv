@@ -1,0 +1,244 @@
+orig.ident,cell_type_main,immune_status,group,n,freq
+C51ctr,APC-like,Immune,Control,69,0.01131333
+C51ctr,B cells,Immune,Control,96,0.015740285
+C51ctr,Endothelial cells,Non-immune,Control,607,0.099524512
+C51ctr,Epithelial cells,Non-immune,Control,2154,0.353172651
+C51ctr,Fibroblasts,Non-immune,Control,833,0.136579767
+C51ctr,Mast cell-like,Immune,Control,153,0.02508608
+C51ctr,Myeloid,Immune,Control,562,0.092146253
+C51ctr,Neuron-like cells,Non-immune,Control,32,0.005246762
+C51ctr,T cells,Immune,Control,1593,0.261190359
+C52ctr,APC-like,Immune,Control,34,0.007533791
+C52ctr,B cells,Immune,Control,8,0.001772657
+C52ctr,Endothelial cells,Non-immune,Control,316,0.070019942
+C52ctr,Epithelial cells,Non-immune,Control,2956,0.654996676
+C52ctr,Fibroblasts,Non-immune,Control,432,0.095723466
+C52ctr,Mast cell-like,Immune,Control,27,0.005982717
+C52ctr,Myeloid,Immune,Control,512,0.113450033
+C52ctr,Neuron-like cells,Non-immune,Control,48,0.010635941
+C52ctr,T cells,Immune,Control,180,0.039884777
+C53ctr,APC-like,Immune,Control,82,0.011516854
+C53ctr,B cells,Immune,Control,1144,0.160674157
+C53ctr,Endothelial cells,Non-immune,Control,333,0.046769663
+C53ctr,Epithelial cells,Non-immune,Control,1856,0.260674157
+C53ctr,Fibroblasts,Non-immune,Control,994,0.139606742
+C53ctr,Mast cell-like,Immune,Control,70,0.009831461
+C53ctr,Myeloid,Immune,Control,1213,0.170365169
+C53ctr,Neuron-like cells,Non-immune,Control,82,0.011516854
+C53ctr,T cells,Immune,Control,1346,0.189044944
+C54ctr,APC-like,Immune,Control,83,0.018941123
+C54ctr,B cells,Immune,Control,45,0.010269283
+C54ctr,Endothelial cells,Non-immune,Control,163,0.037197627
+C54ctr,Epithelial cells,Non-immune,Control,1910,0.43587403
+C54ctr,Fibroblasts,Non-immune,Control,724,0.16522136
+C54ctr,Mast cell-like,Immune,Control,112,0.025559105
+C54ctr,Myeloid,Immune,Control,569,0.129849384
+C54ctr,Neuron-like cells,Non-immune,Control,29,0.006617983
+C54ctr,T cells,Immune,Control,747,0.170470105
+C55ctr,APC-like,Immune,Control,101,0.017766051
+C55ctr,B cells,Immune,Control,435,0.07651715
+C55ctr,Endothelial cells,Non-immune,Control,334,0.058751099
+C55ctr,Epithelial cells,Non-immune,Control,2317,0.407563764
+C55ctr,Fibroblasts,Non-immune,Control,963,0.16939314
+C55ctr,Mast cell-like,Immune,Control,49,0.008619173
+C55ctr,Myeloid,Immune,Control,892,0.156904134
+C55ctr,Neuron-like cells,Non-immune,Control,72,0.012664908
+C55ctr,T cells,Immune,Control,522,0.09182058
+C56ctr,APC-like,Immune,Control,35,0.008557457
+C56ctr,B cells,Immune,Control,228,0.055745721
+C56ctr,Endothelial cells,Non-immune,Control,53,0.012958435
+C56ctr,Epithelial cells,Non-immune,Control,2155,0.526894866
+C56ctr,Fibroblasts,Non-immune,Control,624,0.152567237
+C56ctr,Mast cell-like,Immune,Control,21,0.005134474
+C56ctr,Myeloid,Immune,Control,518,0.126650367
+C56ctr,Neuron-like cells,Non-immune,Control,5,0.001222494
+C56ctr,T cells,Immune,Control,451,0.110268949
+C57ctr,APC-like,Immune,Control,23,0.004802673
+C57ctr,B cells,Immune,Control,28,0.005846732
+C57ctr,Endothelial cells,Non-immune,Control,272,0.056796826
+C57ctr,Epithelial cells,Non-immune,Control,2826,0.590102318
+C57ctr,Fibroblasts,Non-immune,Control,716,0.149509292
+C57ctr,Mast cell-like,Immune,Control,137,0.028607225
+C57ctr,Myeloid,Immune,Control,471,0.098350386
+C57ctr,Neuron-like cells,Non-immune,Control,63,0.013155147
+C57ctr,T cells,Immune,Control,253,0.052829401
+L01cov,APC-like,Immune,COVID-19,38,0.012418301
+L01cov,B cells,Immune,COVID-19,77,0.025163399
+L01cov,Endothelial cells,Non-immune,COVID-19,206,0.067320261
+L01cov,Epithelial cells,Non-immune,COVID-19,1047,0.342156863
+L01cov,Fibroblasts,Non-immune,COVID-19,553,0.180718954
+L01cov,Mast cell-like,Immune,COVID-19,19,0.00620915
+L01cov,Myeloid,Immune,COVID-19,604,0.197385621
+L01cov,Neuron-like cells,Non-immune,COVID-19,81,0.026470588
+L01cov,T cells,Immune,COVID-19,435,0.142156863
+L03cov,APC-like,Immune,COVID-19,20,0.003952569
+L03cov,B cells,Immune,COVID-19,483,0.095454545
+L03cov,Endothelial cells,Non-immune,COVID-19,164,0.032411067
+L03cov,Epithelial cells,Non-immune,COVID-19,481,0.095059289
+L03cov,Fibroblasts,Non-immune,COVID-19,910,0.179841897
+L03cov,Mast cell-like,Immune,COVID-19,77,0.015217391
+L03cov,Myeloid,Immune,COVID-19,2069,0.408893281
+L03cov,Neuron-like cells,Non-immune,COVID-19,137,0.027075099
+L03cov,T cells,Immune,COVID-19,719,0.142094862
+L04cov,APC-like,Immune,COVID-19,43,0.01184573
+L04cov,B cells,Immune,COVID-19,646,0.177961433
+L04cov,Endothelial cells,Non-immune,COVID-19,82,0.022589532
+L04cov,Epithelial cells,Non-immune,COVID-19,231,0.063636364
+L04cov,Fibroblasts,Non-immune,COVID-19,476,0.131129477
+L04cov,Mast cell-like,Immune,COVID-19,45,0.012396694
+L04cov,Myeloid,Immune,COVID-19,1376,0.379063361
+L04cov,Neuron-like cells,Non-immune,COVID-19,57,0.015702479
+L04cov,T cells,Immune,COVID-19,674,0.185674931
+L04covaddon,APC-like,Immune,COVID-19,79,0.017271535
+L04covaddon,B cells,Immune,COVID-19,783,0.171184958
+L04covaddon,Endothelial cells,Non-immune,COVID-19,70,0.015303892
+L04covaddon,Epithelial cells,Non-immune,COVID-19,136,0.029733275
+L04covaddon,Fibroblasts,Non-immune,COVID-19,740,0.161783997
+L04covaddon,Mast cell-like,Immune,COVID-19,73,0.015959773
+L04covaddon,Myeloid,Immune,COVID-19,1606,0.351114998
+L04covaddon,Neuron-like cells,Non-immune,COVID-19,70,0.015303892
+L04covaddon,T cells,Immune,COVID-19,1017,0.222343682
+L05cov,APC-like,Immune,COVID-19,8,0.002621232
+L05cov,B cells,Immune,COVID-19,191,0.062581913
+L05cov,Endothelial cells,Non-immune,COVID-19,204,0.066841415
+L05cov,Epithelial cells,Non-immune,COVID-19,151,0.049475754
+L05cov,Fibroblasts,Non-immune,COVID-19,646,0.211664482
+L05cov,Mast cell-like,Immune,COVID-19,20,0.00655308
+L05cov,Myeloid,Immune,COVID-19,1578,0.517038008
+L05cov,Neuron-like cells,Non-immune,COVID-19,47,0.015399738
+L05cov,T cells,Immune,COVID-19,207,0.067824377
+L06cov,APC-like,Immune,COVID-19,21,0.002769718
+L06cov,B cells,Immune,COVID-19,221,0.029147982
+L06cov,Endothelial cells,Non-immune,COVID-19,366,0.048272224
+L06cov,Epithelial cells,Non-immune,COVID-19,1848,0.243735162
+L06cov,Fibroblasts,Non-immune,COVID-19,1584,0.208915853
+L06cov,Mast cell-like,Immune,COVID-19,65,0.008572936
+L06cov,Myeloid,Immune,COVID-19,2668,0.351886046
+L06cov,Neuron-like cells,Non-immune,COVID-19,190,0.025059351
+L06cov,T cells,Immune,COVID-19,619,0.081640728
+L07cov,APC-like,Immune,COVID-19,27,0.005321246
+L07cov,B cells,Immune,COVID-19,662,0.130469058
+L07cov,Endothelial cells,Non-immune,COVID-19,41,0.00808041
+L07cov,Epithelial cells,Non-immune,COVID-19,758,0.149389042
+L07cov,Fibroblasts,Non-immune,COVID-19,623,0.122782814
+L07cov,Mast cell-like,Immune,COVID-19,58,0.011430824
+L07cov,Myeloid,Immune,COVID-19,930,0.183287347
+L07cov,Neuron-like cells,Non-immune,COVID-19,101,0.0199054
+L07cov,T cells,Immune,COVID-19,1874,0.369333859
+L08cov,APC-like,Immune,COVID-19,30,0.007230658
+L08cov,B cells,Immune,COVID-19,421,0.101470234
+L08cov,Endothelial cells,Non-immune,COVID-19,105,0.025307303
+L08cov,Epithelial cells,Non-immune,COVID-19,262,0.063147746
+L08cov,Fibroblasts,Non-immune,COVID-19,975,0.234996385
+L08cov,Mast cell-like,Immune,COVID-19,77,0.018558689
+L08cov,Myeloid,Immune,COVID-19,1327,0.319836105
+L08cov,Neuron-like cells,Non-immune,COVID-19,116,0.027958544
+L08cov,T cells,Immune,COVID-19,836,0.201494336
+L09cov,APC-like,Immune,COVID-19,26,0.007212205
+L09cov,B cells,Immune,COVID-19,138,0.038280166
+L09cov,Endothelial cells,Non-immune,COVID-19,107,0.029680999
+L09cov,Epithelial cells,Non-immune,COVID-19,1680,0.466019417
+L09cov,Fibroblasts,Non-immune,COVID-19,769,0.21331484
+L09cov,Mast cell-like,Immune,COVID-19,49,0.013592233
+L09cov,Myeloid,Immune,COVID-19,633,0.175589459
+L09cov,Neuron-like cells,Non-immune,COVID-19,17,0.004715673
+L09cov,T cells,Immune,COVID-19,186,0.051595007
+L10cov,APC-like,Immune,COVID-19,2,0.001290323
+L10cov,B cells,Immune,COVID-19,23,0.01483871
+L10cov,Endothelial cells,Non-immune,COVID-19,79,0.050967742
+L10cov,Epithelial cells,Non-immune,COVID-19,424,0.273548387
+L10cov,Fibroblasts,Non-immune,COVID-19,364,0.23483871
+L10cov,Mast cell-like,Immune,COVID-19,11,0.007096774
+L10cov,Myeloid,Immune,COVID-19,588,0.379354839
+L10cov,Neuron-like cells,Non-immune,COVID-19,15,0.009677419
+L10cov,T cells,Immune,COVID-19,44,0.028387097
+L11cov,APC-like,Immune,COVID-19,44,0.013349515
+L11cov,B cells,Immune,COVID-19,178,0.054004854
+L11cov,Endothelial cells,Non-immune,COVID-19,54,0.016383495
+L11cov,Epithelial cells,Non-immune,COVID-19,122,0.037014563
+L11cov,Fibroblasts,Non-immune,COVID-19,545,0.165351942
+L11cov,Mast cell-like,Immune,COVID-19,10,0.003033981
+L11cov,Myeloid,Immune,COVID-19,1988,0.60315534
+L11cov,Neuron-like cells,Non-immune,COVID-19,43,0.013046117
+L11cov,T cells,Immune,COVID-19,312,0.094660194
+L12cov,APC-like,Immune,COVID-19,15,0.003869969
+L12cov,B cells,Immune,COVID-19,143,0.036893705
+L12cov,Endothelial cells,Non-immune,COVID-19,206,0.053147575
+L12cov,Epithelial cells,Non-immune,COVID-19,507,0.130804954
+L12cov,Fibroblasts,Non-immune,COVID-19,1244,0.320949432
+L12cov,Mast cell-like,Immune,COVID-19,165,0.042569659
+L12cov,Myeloid,Immune,COVID-19,971,0.250515996
+L12cov,Neuron-like cells,Non-immune,COVID-19,69,0.017801858
+L12cov,T cells,Immune,COVID-19,556,0.143446852
+L13cov,APC-like,Immune,COVID-19,1,0.000205677
+L13cov,B cells,Immune,COVID-19,40,0.008227067
+L13cov,Endothelial cells,Non-immune,COVID-19,380,0.078157137
+L13cov,Epithelial cells,Non-immune,COVID-19,628,0.129164953
+L13cov,Fibroblasts,Non-immune,COVID-19,1595,0.328054299
+L13cov,Mast cell-like,Immune,COVID-19,8,0.001645413
+L13cov,Myeloid,Immune,COVID-19,1800,0.370218017
+L13cov,Neuron-like cells,Non-immune,COVID-19,111,0.022830111
+L13cov,T cells,Immune,COVID-19,299,0.061497326
+L15cov,APC-like,Immune,COVID-19,14,0.003451677
+L15cov,B cells,Immune,COVID-19,149,0.0367357
+L15cov,Endothelial cells,Non-immune,COVID-19,252,0.062130178
+L15cov,Epithelial cells,Non-immune,COVID-19,923,0.227564103
+L15cov,Fibroblasts,Non-immune,COVID-19,596,0.146942801
+L15cov,Mast cell-like,Immune,COVID-19,38,0.009368836
+L15cov,Myeloid,Immune,COVID-19,1435,0.353796844
+L15cov,Neuron-like cells,Non-immune,COVID-19,87,0.021449704
+L15cov,T cells,Immune,COVID-19,562,0.138560158
+L16cov,APC-like,Immune,COVID-19,5,0.002744237
+L16cov,B cells,Immune,COVID-19,128,0.07025247
+L16cov,Endothelial cells,Non-immune,COVID-19,35,0.01920966
+L16cov,Epithelial cells,Non-immune,COVID-19,354,0.194291987
+L16cov,Fibroblasts,Non-immune,COVID-19,547,0.300219539
+L16cov,Mast cell-like,Immune,COVID-19,20,0.010976948
+L16cov,Myeloid,Immune,COVID-19,464,0.254665203
+L16cov,Neuron-like cells,Non-immune,COVID-19,43,0.023600439
+L16cov,T cells,Immune,COVID-19,226,0.124039517
+L17cov,APC-like,Immune,COVID-19,0,0
+L17cov,B cells,Immune,COVID-19,103,0.022145775
+L17cov,Endothelial cells,Non-immune,COVID-19,529,0.113738981
+L17cov,Epithelial cells,Non-immune,COVID-19,709,0.152440335
+L17cov,Fibroblasts,Non-immune,COVID-19,1821,0.391528704
+L17cov,Mast cell-like,Immune,COVID-19,72,0.015480542
+L17cov,Myeloid,Immune,COVID-19,787,0.169210922
+L17cov,Neuron-like cells,Non-immune,COVID-19,229,0.049236723
+L17cov,T cells,Immune,COVID-19,401,0.086218018
+L18cov,APC-like,Immune,COVID-19,3,0.001065341
+L18cov,B cells,Immune,COVID-19,37,0.013139205
+L18cov,Endothelial cells,Non-immune,COVID-19,74,0.026278409
+L18cov,Epithelial cells,Non-immune,COVID-19,252,0.089488636
+L18cov,Fibroblasts,Non-immune,COVID-19,1377,0.488991477
+L18cov,Mast cell-like,Immune,COVID-19,4,0.001420455
+L18cov,Myeloid,Immune,COVID-19,883,0.313565341
+L18cov,Neuron-like cells,Non-immune,COVID-19,134,0.047585227
+L18cov,T cells,Immune,COVID-19,52,0.018465909
+L19cov,APC-like,Immune,COVID-19,4,0.001594261
+L19cov,B cells,Immune,COVID-19,41,0.016341172
+L19cov,Endothelial cells,Non-immune,COVID-19,45,0.017935432
+L19cov,Epithelial cells,Non-immune,COVID-19,1630,0.64966122
+L19cov,Fibroblasts,Non-immune,COVID-19,218,0.086887206
+L19cov,Mast cell-like,Immune,COVID-19,7,0.002789956
+L19cov,Myeloid,Immune,COVID-19,418,0.166600239
+L19cov,Neuron-like cells,Non-immune,COVID-19,33,0.01315265
+L19cov,T cells,Immune,COVID-19,113,0.045037864
+L21cov,APC-like,Immune,COVID-19,11,0.003211679
+L21cov,B cells,Immune,COVID-19,144,0.042043796
+L21cov,Endothelial cells,Non-immune,COVID-19,144,0.042043796
+L21cov,Epithelial cells,Non-immune,COVID-19,789,0.230364964
+L21cov,Fibroblasts,Non-immune,COVID-19,318,0.092846715
+L21cov,Mast cell-like,Immune,COVID-19,70,0.020437956
+L21cov,Myeloid,Immune,COVID-19,912,0.266277372
+L21cov,Neuron-like cells,Non-immune,COVID-19,18,0.005255474
+L21cov,T cells,Immune,COVID-19,1019,0.297518248
+L22cov,APC-like,Immune,COVID-19,31,0.004436811
+L22cov,B cells,Immune,COVID-19,644,0.092171175
+L22cov,Endothelial cells,Non-immune,COVID-19,165,0.023615286
+L22cov,Epithelial cells,Non-immune,COVID-19,964,0.137970517
+L22cov,Fibroblasts,Non-immune,COVID-19,1722,0.246457707
+L22cov,Mast cell-like,Immune,COVID-19,7,0.001001861
+L22cov,Myeloid,Immune,COVID-19,1858,0.265922427
+L22cov,Neuron-like cells,Non-immune,COVID-19,88,0.012594819
+L22cov,T cells,Immune,COVID-19,1508,0.215829397

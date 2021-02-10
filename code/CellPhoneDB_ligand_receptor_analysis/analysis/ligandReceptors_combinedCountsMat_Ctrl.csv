@@ -1,0 +1,82 @@
+"","SOURCE","TARGET","C51ctr-count","C52ctr-count","C53ctr-count","C54ctr-count","C55ctr-count","C56ctr-count","C57ctr-count"
+"31","APC-like","APC-like",10,8,7,3,5,11,9
+"36","APC-like","B cells",11,11,4,5,7,6,9
+"33","APC-like","Endothelial cells",19,10,18,4,10,15,26
+"28","APC-like","Epithelial cells",33,18,21,17,12,17,20
+"30","APC-like","Fibroblasts",28,17,29,10,14,13,30
+"34","APC-like","Mast cell-like",9,10,4,2,4,4,8
+"29","APC-like","Myeloid",31,31,19,14,13,22,26
+"35","APC-like","Neuron-like cells",21,11,18,8,7,14,16
+"32","APC-like","T cells",10,10,9,4,10,7,11
+"76","B cells","APC-like",11,11,4,5,7,6,9
+"81","B cells","B cells",3,3,3,4,2,3,2
+"78","B cells","Endothelial cells",11,13,10,7,6,5,16
+"73","B cells","Epithelial cells",22,12,13,10,12,6,11
+"75","B cells","Fibroblasts",13,22,16,9,12,8,18
+"79","B cells","Mast cell-like",5,7,3,4,1,1,5
+"74","B cells","Myeloid",12,20,16,11,7,6,11
+"80","B cells","Neuron-like cells",3,16,14,6,3,3,9
+"77","B cells","T cells",11,10,4,3,3,1,4
+"49","Endothelial cells","APC-like",19,10,18,4,10,15,26
+"54","Endothelial cells","B cells",11,13,10,7,6,5,16
+"51","Endothelial cells","Endothelial cells",12,3,17,6,5,28,15
+"46","Endothelial cells","Epithelial cells",42,27,40,20,22,45,24
+"48","Endothelial cells","Fibroblasts",54,34,80,34,29,90,32
+"52","Endothelial cells","Mast cell-like",11,8,17,1,4,6,12
+"47","Endothelial cells","Myeloid",32,25,26,18,11,20,31
+"53","Endothelial cells","Neuron-like cells",27,14,40,14,11,59,18
+"50","Endothelial cells","T cells",11,11,8,4,7,14,13
+"4","Epithelial cells","APC-like",33,18,21,17,12,17,20
+"9","Epithelial cells","B cells",22,12,13,10,12,6,11
+"6","Epithelial cells","Endothelial cells",42,27,40,20,22,45,24
+"1","Epithelial cells","Epithelial cells",35,29,28,13,19,31,16
+"3","Epithelial cells","Fibroblasts",73,69,89,35,50,71,38
+"7","Epithelial cells","Mast cell-like",17,13,20,5,7,3,9
+"2","Epithelial cells","Myeloid",53,51,43,27,18,30,31
+"8","Epithelial cells","Neuron-like cells",27,24,49,21,13,21,17
+"5","Epithelial cells","T cells",24,20,12,8,9,21,13
+"22","Fibroblasts","APC-like",28,17,29,10,14,13,30
+"27","Fibroblasts","B cells",13,22,16,9,12,8,18
+"24","Fibroblasts","Endothelial cells",54,34,80,34,29,90,32
+"19","Fibroblasts","Epithelial cells",73,69,89,35,50,71,38
+"21","Fibroblasts","Fibroblasts",31,47,86,40,42,81,32
+"25","Fibroblasts","Mast cell-like",12,14,20,3,8,15,8
+"20","Fibroblasts","Myeloid",41,37,57,19,14,27,36
+"26","Fibroblasts","Neuron-like cells",32,40,106,35,20,108,30
+"23","Fibroblasts","T cells",28,28,17,4,9,32,21
+"58","Mast cell-like","APC-like",9,10,4,2,4,4,8
+"63","Mast cell-like","B cells",5,7,3,4,1,1,5
+"60","Mast cell-like","Endothelial cells",11,8,17,1,4,6,12
+"55","Mast cell-like","Epithelial cells",17,13,20,5,7,3,9
+"57","Mast cell-like","Fibroblasts",12,14,20,3,8,15,8
+"61","Mast cell-like","Mast cell-like",2,2,3,1,1,0,3
+"56","Mast cell-like","Myeloid",16,15,12,12,3,6,14
+"62","Mast cell-like","Neuron-like cells",8,4,14,1,3,9,9
+"59","Mast cell-like","T cells",7,9,4,2,1,4,5
+"13","Myeloid","APC-like",31,31,19,14,13,22,26
+"18","Myeloid","B cells",12,20,16,11,7,6,11
+"15","Myeloid","Endothelial cells",32,25,26,18,11,20,31
+"10","Myeloid","Epithelial cells",53,51,43,27,18,30,31
+"12","Myeloid","Fibroblasts",41,37,57,19,14,27,36
+"16","Myeloid","Mast cell-like",16,15,12,12,3,6,14
+"11","Myeloid","Myeloid",27,38,26,20,7,15,26
+"17","Myeloid","Neuron-like cells",23,19,20,10,10,22,22
+"14","Myeloid","T cells",22,25,20,13,11,14,20
+"67","Neuron-like cells","APC-like",21,11,18,8,7,14,16
+"72","Neuron-like cells","B cells",3,16,14,6,3,3,9
+"69","Neuron-like cells","Endothelial cells",27,14,40,14,11,59,18
+"64","Neuron-like cells","Epithelial cells",27,24,49,21,13,21,17
+"66","Neuron-like cells","Fibroblasts",32,40,106,35,20,108,30
+"70","Neuron-like cells","Mast cell-like",8,4,14,1,3,9,9
+"65","Neuron-like cells","Myeloid",23,19,20,10,10,22,22
+"71","Neuron-like cells","Neuron-like cells",8,9,29,9,2,53,5
+"68","Neuron-like cells","T cells",13,7,13,6,3,18,6
+"40","T cells","APC-like",10,10,9,4,10,7,11
+"45","T cells","B cells",11,10,4,3,3,1,4
+"42","T cells","Endothelial cells",11,11,8,4,7,14,13
+"37","T cells","Epithelial cells",24,20,12,8,9,21,13
+"39","T cells","Fibroblasts",28,28,17,4,9,32,21
+"43","T cells","Mast cell-like",7,9,4,2,1,4,5
+"38","T cells","Myeloid",22,25,20,13,11,14,20
+"44","T cells","Neuron-like cells",13,7,13,6,3,18,6
+"41","T cells","T cells",4,5,3,1,1,3,3
