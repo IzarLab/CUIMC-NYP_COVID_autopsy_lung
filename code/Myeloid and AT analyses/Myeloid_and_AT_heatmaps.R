@@ -5,8 +5,8 @@
 ### comparing COVID-19 samples vs. Control samples within the same cell type
 ### author: Yiping Wang date: 02/08/2021
 
-# Creates Figures 3e, Extended Data Myeloid g, Extended Data Myeloid 2 a,
-# Extended Data Fibroblasts i
+# Creates Figures 3E, Extended Data Figure 4H, Extended Data Figure 5A,
+# Extended Data Fibroblasts I
 
 # list of options controls which kind of heatmaps to plot choose whether to plot
 # heatmaps for AT cells, fibroblasts, or myeloid (default)

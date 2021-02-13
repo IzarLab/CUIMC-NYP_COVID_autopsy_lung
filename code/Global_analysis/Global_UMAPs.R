@@ -8,7 +8,7 @@ consistentcolors = c("#006E82", "#AA0A3C", "#8214A0", "#00A0FA", "#FA5078", "#00
     "#CC79A7", "#FAE6BE", "#0072B2", "#A0FA82", "#F0F032", "#0AB45A", "#FA7850", 
     "#14D2DC", "#FA78FA")
 
-# first two UMAPs plotted are used to generate Figures 1c and 1d
+# first two UMAPs plotted are used to generate Figures 1C and 1D
 
 # UMAP of cell_type_intermediate, and COVID-19 vs. Control status, in one file
 pdf(file = paste0("cell_type_intermediate_lungs_all_umap.pdf"), height = 7, width = 14)
@@ -76,8 +76,8 @@ labelsuffix = c("", "_nolabels")
 
 # highlight either epithelial, immune, or fibroblast cell groups in three
 # different UMAP figures, all plotted on the same pdf file create this either
-# with or without cell type group labels Immune cells is Figure 2a Epithelial
-# cells is Figure 3a Fibroblasts is Figure 4a
+# with or without cell type group labels Immune cells is Figure 2A Epithelial
+# cells is Figure 3A Fibroblasts is Figure 4A
 for (z in 1:length(withlabels)) {
     DefaultAssay(data_lungs_all) = "RNA"
     pdf(file = paste0("cell_type_intermediate_lungs_all_epithelial_fibroblast_immune_subsets_umap", 

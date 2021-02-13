@@ -33,7 +33,7 @@ print(pval)
 ggplot(fibrosis_table, aes(x = symptoms.death..days., y = Age)) + geom_point() + 
     geom_smooth(method = "lm") + ggtitle(expression(paste(" ", R^2, "= 0.279, p-val = 0.0293"))) + 
     xlab("Days from symptom onset to death") + ylab("Age")
-ggsave("Extended Data Fibroblasts c.pdf", width = 7, height = 7)
+ggsave("Extended_Data_Fibroblasts_C.pdf", width = 7, height = 7)
 
 fibrosis_table = read.table("Fibrosis_score_sequencing_cohort.txt", header = T, sep = "\t", 
     quote = NULL)
@@ -47,7 +47,7 @@ print(pval)
 ggplot(fibrosis_table, aes(x = Age, y = Sirius.Red)) + geom_point() + geom_smooth(method = "lm") + 
     ggtitle(expression(paste(" ", R^2, "= 0.177, p-val = 0.105"))) + xlab("Age") + 
     ylab("Fibrosis Score")
-ggsave("Extended Data Fibroblasts d.pdf", width = 7, height = 7)
+ggsave("Extended_Data_Fibroblasts_D.pdf", width = 7, height = 7)
 
 fibrosis_table = read.table("Fibrosis_score_sequencing_cohort.txt", header = T, sep = "\t", 
     quote = NULL)
@@ -61,4 +61,4 @@ print(pval)
 ggplot(fibrosis_table, aes(x = Age, y = Sirius.Red)) + geom_point() + geom_smooth(method = "lm") + 
     ggtitle(expression(paste(" ", R^2, "= 0.0122, p-val = 0.813"))) + xlab("Age") + 
     ylab("Fibrosis Score")
-ggsave("Extended Data Fibroblasts e.pdf", width = 7, height = 7)
+ggsave("Extended_Data_Fibroblasts_E.pdf", width = 7, height = 7)

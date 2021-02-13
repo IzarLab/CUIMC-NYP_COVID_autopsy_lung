@@ -80,7 +80,7 @@ ggplot(dotplotdf2, aes(x = tissue, y = sig, color = logfoldchange, size = pval))
     "#EDFF00FF", "red"), breaks = c(min(dotplotdf2$logfoldchange), 0, max(dotplotdf2$logfoldchange))) + 
     scale_size(trans = "reverse", breaks = c(0.005, 0.025, 0.05, 0.075), labels = c("<=.005", 
         ".025", ".05", ">=.075")) + ylab("Pathway") + xlab("Cell Type") + labs(color = "Log 2 FC")
-ggsave(paste0("Extended Data Figure Cytokines a.pdf"), width = 11, height = 5)
+ggsave(paste0("Extended_Data_Figure_9G.pdf"), width = 11, height = 5)
 
 write.table(dotplotdf2, "misc_sigs_revision_sig_results.csv", row.names = F, col.names = T, 
     sep = ",", quote = F)

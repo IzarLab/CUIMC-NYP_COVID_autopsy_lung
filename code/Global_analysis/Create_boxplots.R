@@ -63,12 +63,12 @@ df_summed_intermediate_nonimmune = df_tobesummed_intermediate_nonimmune %>% grou
 df_summed_intermediate_nonimmune = df_summed_intermediate_nonimmune %>% group_by(orig.ident) %>% 
     mutate(freq = n/sum(n))
 
-# make boxplots of cell type frequencies in cov and ctr, using cell type
+# make boxplots of cell type frequencies in COVID-19 and Control, using cell type
 # frequencies defined above
 ggboxplot(df_summed_main, x = "cell_type_main", y = "freq", color = "group", add = "jitter") + 
     ylim(0, 0.8) + stat_compare_means(aes(group = group), label = "p.format", method = "wilcox.test") + 
     theme(axis.text.x = element_text(angle = 90, hjust = 1)) + scale_colour_manual(values = consistentcolors[1:2])
-ggsave(paste0("Figure_1e.pdf"), width = 11, height = 7)
+ggsave(paste0("Figure_1E.pdf"), width = 11, height = 7)
 ggboxplot(subset(df_summed_main, immune_status == "Immune"), x = "cell_type_main", 
     y = "freq", color = "group", add = "jitter") + ylim(0, 0.8) + stat_compare_means(aes(group = group), 
     label = "p.format", method = "wilcox.test") + theme(axis.text.x = element_text(angle = 90, 
@@ -79,20 +79,22 @@ ggboxplot(subset(df_summed_main, immune_status == "Non-immune"), x = "cell_type_
     label = "p.format", method = "wilcox.test", size = 2) + theme(axis.text.x = element_text(angle = 90, 
     hjust = 1)) + scale_colour_manual(values = consistentcolors[1:2])
 ggsave(paste0("cell_type_main_lungs_all_nonimmune_boxplot.pdf"), width = 8, height = 7)
-# Extended Data Figure 1b
+
+# Extended Data Figure 2B
 ggboxplot(df_summed_intermediate_nonimmune, x = "cell_type_intermediate", y = "freq", 
     color = "group", add = "jitter") + ylim(0, 1) + stat_compare_means(aes(group = group), 
     label = "p.format", method = "wilcox.test", size = 2, label.y = 0.9) + theme(axis.text.x = element_text(angle = 90, 
     hjust = 1)) + scale_colour_manual(values = consistentcolors[1:2])
-ggsave(paste0("cell_type_intermediate_lungs_all_nonimmune_boxplot.pdf"), width = 6, 
+ggsave(paste0("Extended_Data_Figure_2B.pdf"), width = 6, 
     height = 5)
-# Extended Data Figure 1c
+# Extended Data Figure 2C
 ggboxplot(df_summed_intermediate_immune, x = "cell_type_intermediate", y = "freq", 
     color = "group", add = "jitter") + ylim(0, 1) + stat_compare_means(aes(group = group), 
     label = "p.format", method = "wilcox.test", size = 2, label.y = 0.9) + theme(axis.text.x = element_text(angle = 90, 
     hjust = 1)) + scale_colour_manual(values = consistentcolors[1:2])
-ggsave(paste0("cell_type_intermediate_lungs_all_immune_boxplot.pdf"), width = 6, 
+ggsave(paste0("Extended_Data_Figure_2C.pdf"), width = 6, 
     height = 5)
+
 ggboxplot(df_summed_fine_fibroblast, x = "cell_type_fine", y = "freq", color = "group", 
     add = "jitter") + ylim(0, 0.8) + stat_compare_means(aes(group = group), label = "p.format", 
     method = "wilcox.test") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
@@ -105,15 +107,15 @@ ggboxplot(df_summed_fine_fibroblast_norm_allcells, x = "cell_type_fine", y = "fr
 ggsave(paste0("cell_type_fine_lungs_all_fibroblast_norm_allcells_boxplot.pdf"), width = 13, 
     height = 7)
 
-# Extended Data Figure 1a
+# Extended Data Figure 2A
 ggboxplot(df_summed_intermediate, x = "cell_type_intermediate", y = "freq", color = "group", 
     add = "jitter") + ylim(0, 0.6) + stat_compare_means(aes(group = group), label = "p.format", 
     method = "wilcox.test", size = 2, label.y = 0.55) + theme(axis.text.x = element_text(angle = 90, 
     hjust = 1)) + scale_colour_manual(values = consistentcolors[1:2])
-ggsave(paste0("cell_type_intermediate_lungs_all_onerow_boxplot.pdf"), width = 12, 
+ggsave(paste0("Extended_Data_Figure_2A.pdf"), width = 12, 
     height = 5)
 
-# make boxplot of all cell_type_intermediate frequencies in cov and ctr, spread
+# make boxplot of all cell_type_intermediate frequencies in COVID-19 and Control, spread
 # across two rows
 allcelltypesintermediate = sort(unique(df_summed_intermediate$cell_type_intermediate))
 df_summed_intermediate$class = 1
@@ -132,8 +134,8 @@ pdf("cell_type_intermediate_lungs_all_boxplot.pdf", width = 12, height = 10)
 print(plot_grid(p1, p2, labels = "", nrow = 2, align = "hv", axis = "tblr"))
 dev.off()
 
-# calculate ratio of AT2 to AT1 cells in each patient, compare ratio in covid vs.
-# ctr samples in a boxplot
+# calculate ratio of AT2 to AT1 cells in each patient, compare ratio in COVID-19 vs.
+# Control samples in a boxplot
 at2freq = df_summed_intermediate[df_summed_intermediate$cell_type_intermediate == 
     "AT2", ]$freq
 at1freq = df_summed_intermediate[df_summed_intermediate$cell_type_intermediate == 
@@ -148,7 +150,7 @@ ggboxplot(df_at, x = "a", y = "atratio", color = "group", add = "jitter") + stat
     label = "p.format", method = "wilcox.test") + theme(axis.text.x = element_text(angle = 90, 
     hjust = 1)) + scale_colour_manual(values = consistentcolors[1:2]) + ylab("AT2/AT1 Ratio") + 
     xlab("")
-ggsave(paste0("cell_type_intermediate_lungs_all_atratio_boxplot.pdf"), width = 4, 
+ggsave(paste0("Figure_3K.pdf"), width = 4, 
     height = 7)
 
 # calculate frequencies of fibroblast classes, merging Intermediate pathological
@@ -166,6 +168,20 @@ df_summed_fine_fibroblast = df_tobesummed_fine_fibroblast %>% group_by(orig.iden
 df_summed_fine_fibroblast = df_summed_fine_fibroblast %>% group_by(orig.ident) %>% 
     mutate(freq = n/sum(n))
 
+# calculate frequencies of pathological fibroblasts in each patient, compare ratio in COVID-19 vs.
+# Control samples in a boxplot
+pathological_FB_freq = df_summed_intermediate[df_summed_intermediate$cell_type_intermediate == 
+    "Pathological FB", ]$freq
+group = df_summed_intermediate[df_summed_intermediate$cell_type_intermediate == "Pathological FB", 
+    ]$group
+df_pfb = data.frame(pathological_FB_freq = pathological_FB_freq, group = group, a = "")
+ggboxplot(df_at, x = "a", y = "pathological_FB_freq", color = "group", add = "jitter") + stat_compare_means(aes(group = group), 
+    label = "p.format", method = "wilcox.test") + theme(axis.text.x = element_text(angle = 90, 
+    hjust = 1)) + scale_colour_manual(values = consistentcolors[1:2]) + ylab("Fraction among Fibroblasts") + 
+    xlab("Pathological Fibroblasts")
+ggsave(paste0("Figure_4G.pdf"), width = 4, 
+    height = 7)
+
 # calculate frequencies of fibroblast classes, normalizing by total frequency of
 # all cells
 df_tobesummed_fine_fibroblast_norm_allcells = data.frame(orig.ident = data_lungs_all$orig.ident, 
@@ -181,12 +197,12 @@ df_summed_fine_fibroblast_norm_allcells = subset(df_summed_fine_fibroblast_norm_
 df_summed_fine_fibroblast_norm_allcells = subset(df_summed_fine_fibroblast_norm_allcells, 
     fibroblast_type != "")
 
-# plot cov and ctr frequencies of fibroblast classes in boxplot
+# plot COVID-19 and Control frequencies of fibroblast classes in boxplot
 ggboxplot(df_summed_fine_fibroblast_norm_allcells, x = "fibroblast_type", y = "freq", 
     color = "group", add = "jitter") + ylim(c(0, 0.4)) + stat_compare_means(aes(group = group), 
     label = "p.format", method = "wilcox.test") + theme(axis.text.x = element_text(angle = 90, 
     hjust = 1)) + scale_colour_manual(values = consistentcolors[1:2]) + ylab("Fraction of Cells")
-ggsave(paste0("Extended Data Figure 1e.pdf"), width = 4, height = 7)
+ggsave(paste0("Extended_Data_Figure_12D.pdf"), width = 4, height = 7)
 
 # calculate frequencies of macrophage classes, normalizing by total frequency of
 # immune cells
@@ -203,17 +219,16 @@ df_summed_fine_macrophage_norm_allimmunecells = subset(df_summed_fine_macrophage
     cell_type_fine %in% c("Alveolar macrophages", "Monocyte-derived macrophages", 
         "Monocytes", "Transitioning MDM"))
 
-# plot cov and ctr frequencies of macrophage classes in boxplot
+# plot COVID-19 and Control frequencies of macrophage classes in boxplot
 ggboxplot(df_summed_fine_macrophage_norm_allimmunecells, x = "cell_type_fine", y = "freq", 
     color = "group", add = "jitter") + ylim(c(0, 0.4)) + stat_compare_means(aes(group = group), 
     label = "p.format", method = "wilcox.test") + theme(axis.text.x = element_text(angle = 90, 
     hjust = 1)) + scale_colour_manual(values = consistentcolors[1:2]) + ylab("Fraction of Cells")
-ggsave(paste0("Figure_1f.pdf"), width = 4, height = 7)
+ggsave(paste0("Extended_Data_Figure_4G.pdf"), width = 4, height = 7)
 
 # for either just COVID-19 samples, just Control samples, or for all samples,
 # perform similar analyses as above, but this time, comparing cell frequencies
-# divided by sex, rather than disease status makes Extended Data Sex Differences
-# a and b
+# divided by sex, rather than disease status makes Extended Data Figure 3A and B
 boxplotgroups = c("COVID-19", "Control", "")
 for (i in 1:length(boxplotgroups)) {
     if (boxplotgroups[i] != "") {

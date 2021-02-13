@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 ### title: Calculate ratio of DATP annotated cells among all AT cells, make boxplot
-### of this ratio in cov and ctr samples, and correlate this ratio with
+### of this ratio in COVID-19 and Control samples, and correlate this ratio with
 ### symptom-death interval author: Yiping Wang date: 02/08/2021
 
 df_tobesummed_fine_AT = data.frame(orig.ident = data_AT_int_cov_ctr$orig.ident, group = data_AT_int_cov_ctr$group, 
@@ -35,7 +35,7 @@ for (i in 1:length(uniqueidents)) {
     }
 }
 
-# plot boxplot of DATP ratios in covid and ctr
+# plot boxplot of DATP ratios in COVID-19 and Control
 datp_ratio_df$a = ""
 consistentcolors = colors <- c("#006E82", "#AA0A3C", "#8214A0", "#00A0FA", "#FA5078", 
     "#005AC8", "#CC79A7", "#FAE6BE", "#0072B2", "#A0FA82", "#F0F032", "#0AB45A", 

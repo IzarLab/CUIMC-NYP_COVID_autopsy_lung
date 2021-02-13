@@ -140,7 +140,7 @@ for (z in 1:length(groups)) {
         height = 12)
     
     # create new dataframe that stores information on IG combinations across covid
-    # and control combinations are labeled as either found in covid or ctr alone, or
+    # and control combinations are labeled as either found in COVID-19 or Control alone, or
     # shared among the two
     if (z == 1) {
         covandctr_sharedIGtable = sharedIGtable
@@ -231,7 +231,7 @@ for (z in 1:length(groups)) {
     # 'IGHM'),values=cbPalette[1:6]) +
 }
 
-# plot IG combinations that are found in covid alone, ctr alone, or in both
+# plot IG combinations that are found in COVID-19 alone, Control alone, or in both
 ggplot(covandctr_sharedIGtable, aes(x = heavyidxs + 0.5, y = lightidxs + 0.5, fill = group, 
     width = 1, height = 1)) + geom_tile() + scale_x_continuous("Heavy Chain", breaks = 1:(length(uniqueheavy) + 
     1), labels = append(uniqueheavy, "")) + scale_y_continuous("Light Chain", breaks = 1:(length(uniquelight) + 

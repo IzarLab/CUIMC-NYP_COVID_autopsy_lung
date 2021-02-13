@@ -87,6 +87,7 @@ for (z in 1:length(groups)) {
         
         # Only add cell to variable regions result dataframe if it has both heavy and
         # light variable chains expressed
+	# Also add cell to patient dataframe only if groups!="", to avoid doublecounting
         if (cell[igh] > 0 & cell[igl] > 0) {
             res[igl, igh] <- res[igl, igh] + 1
             nonzerocelltypes1 = append(nonzerocelltypes1, nonzerocelltypes[c])
@@ -125,7 +126,7 @@ for (z in 1:length(groups)) {
     }
     
     my_palette <- colorRampPalette(c("gray", "green"))(n = 100)
-    # Save Figure 2h change height dimensions so light labels on y axis don't have
+    # Save heatmap of combination frequencies, change height dimensions so light labels on y axis don't have
     # some dropout if figure too short
     if (groups[z] != "") {
         if (groups[z] == "cov") {
@@ -145,7 +146,7 @@ for (z in 1:length(groups)) {
         keysize = 1.5, lhei = c(1.7, 5), density.info = "none")
     dev.off()
     
-    # write out light and heavy chains as plotted in combination frequency heatmap,
+    # write out the order of light and heavy chains as plotted in combination frequency heatmap,
     # for use in IG_combination_plots.R
     if (groups[z] == "") {
         lightorder = rev(rownames(res)[out$rowInd])

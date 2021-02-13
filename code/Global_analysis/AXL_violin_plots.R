@@ -10,7 +10,7 @@ for (i in 1:length(uniquecelltypesmain)) {
     data_lungs_all = SetIdent(data_lungs_all, cells = colnames(data_lungs_all)[data_lungs_all$cell_type_main == 
         uniquecelltypesmain[i]], value = uniquecelltypesmain[i])
 }
-pdf("Extended Data Myeloid 2 c.pdf")
+pdf("Extended_Data_Figure_5C.pdf")
 aplot = VlnPlot(data_lungs_all, features = c("AXL"), log = T)
 AugmentPlot(aplot, dpi = 300)
 print(aplot)
