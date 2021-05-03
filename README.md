@@ -8,11 +8,17 @@ Johannes C. Melms, Jana Biermann, Huachao Huang, Yiping Wang, Ajay Nair, Somnath
 
 Overview of code structure and corresponding Figures and Tables can be found in `code_overview.csv`
 
-### Link to manuscript
-XYZ
+### Publication
+https://doi.org/10.1038/s41586-021-03569-1
 
-### Link to Single Cell Portal upload
+### GEO data upload (GSE171524)
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171524
+
+### Single Cell Portal data upload
 https://singlecell.broadinstitute.org/single_cell/study/SCP1219
 
-### Link to Vectra images
+### Raw data at Broad Data Use and Oversight System
+https://duos.broadinstitute.org (study ID DUOS-000130)
+
+### Vectra images
 https://drive.google.com/drive/folders/1zUtj8HKEoWFA6mS1GPrDQwV3RVKBKjmH?usp=sharing
